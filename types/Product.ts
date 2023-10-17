@@ -1,0 +1,17 @@
+export type Product = {
+    _id: string,
+    _createdAt: Date,
+    name: string,
+    productName: string,
+    slug: string,
+    categori: string,
+    material: string,
+    gender: string,
+    image: string,
+    alt: string,
+    description: string,
+    pris: number,
+    sale: boolean,
+    tilbudsprosent: number,
+    inStock: number,
+}
