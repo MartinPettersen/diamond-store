@@ -44,6 +44,7 @@ const CategoriDisplay = ({ kategori, index }: props) => {
 
   return (
     <div>
+      {/* 
       <div key={index} className="p-6 ">
         <div className="flex text-4xl items-center justify-center p-6">
           Vårt utvalg av {translator(Object.keys(catalogue)[index])}
@@ -94,6 +95,7 @@ const CategoriDisplay = ({ kategori, index }: props) => {
           </div>
         </div>
       </div>
+      */}
     </div>
   );
 };
