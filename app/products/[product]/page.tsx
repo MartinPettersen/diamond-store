@@ -32,6 +32,7 @@ const ProductInfo = ({ params }: Props ) => {
         (data) => {setProduct(data)
         setLoading(false)}
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     // https://nextjs.org/docs/pages/building-your-application/data-fetching/client-side
 

@@ -46,6 +46,7 @@ const Showcase = ({ params }: Props) => {
         (data) => {setUtvalgteProdukter(data)
         setLoading(false)}
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     
@@ -69,6 +70,7 @@ const Showcase = ({ params }: Props) => {
         (data) => {setUtvalgteProdukter(data)
         setLoading(false)}
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filters])
 
   const catalogue = useSelector(

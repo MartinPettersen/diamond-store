@@ -38,6 +38,7 @@ const SearchResults = ({ params }: Props) => {
         (data) => {setUtvalgteProdukter(data)
         setLoading(false)}
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     
