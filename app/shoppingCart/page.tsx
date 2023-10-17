@@ -4,19 +4,7 @@ import MiniProductDisplay from "@/components/MiniProductDisplay";
 import type { RootState } from "../globalRedux/store";
 import { useSelector, useDispatch } from "react-redux";
 
-export type product = {
-  productId: number,
-  productName: string,
-  image: string,
-  material: string,
-  category: string,
-  description: string,
-  gender: string,
-  pris: number,
-  sale: boolean,
-  tilbudsprosent: number,
-  inStock: number,
-}
+
 
 const ShoppingCart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);

@@ -1,5 +1,6 @@
 'use client';
 
+import { Product } from '@/types/Product';
 import { createSlice } from '@reduxjs/toolkit';
 
 export type item ={
@@ -21,7 +22,7 @@ export type product = {
 }
 
 export interface CartState {
-    items: product[],
+    items: Product[],
     total: number,
 }
 
