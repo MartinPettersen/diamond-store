@@ -1,6 +1,4 @@
 "use client";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-// make it a client component so that it is interactive
 
 import { UserIcon } from "@heroicons/react/24/solid";
 
@@ -11,7 +9,6 @@ import { categoriHandler } from "@/app/globalRedux/Features/filters/filterSlice"
 import Link from "next/link";
 import SearchButton from "./SearchButton";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-// import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 import TopHeader from "./TopHeader";
@@ -25,23 +22,21 @@ const Header = () => {
   );
   const dispatch = useDispatch();
 
-  const filters = useSelector((state: RootState) => state.filter);
-
   const translator = (expr: string) => {
     switch (expr) {
-      case "Ring":
+      case "ring":
         return "Ringer";
         break;
-      case "Necklace":
+      case "necklace":
         return "Smykker";
         break;
-      case "Bracelet":
+      case "bracelet":
         return "Armbånd";
         break;
-      case "Watch":
+      case "watch":
         return "Armbåndsur";
         break;
-      case "Earring":
+      case "earring":
         return "Øredobber";
         break;
       default:
@@ -54,8 +49,7 @@ const Header = () => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/searchResults/${searchTerm}`);
-
-  }
+  };
 
   return (
     <header className="flex flex-col items-center border-b-2 border-gray-100 ">
@@ -72,20 +66,16 @@ const Header = () => {
       <div className="w-full md:max-w-lg flex flex-1 flex-row items-center pb-4 pt-2 ">
         <form onSubmit={handleSearch} className="w-full">
           <div className="flex flex-1 items-center gap-2 w-full px-4">
-            
-              <div className="flex flex-1 items-center space-x-2 bg-white rounded-xl border px-2 py-2 md:max-w-sm">
-                <input
-                  type="text"
-                  name="searchProducts"
-                  placeholder="Søk etter Produkt"
-                  className="outline-none flex-1  "
-                  onChange={e=>setSearchTerm(e.target.value)}
-                />
-                <SearchButton />
-              </div>
-            {/*
-            <input type="submit" value="Søk" />
-            */}
+            <div className="flex flex-1 items-center space-x-2 bg-white rounded-xl border px-2 py-2 md:max-w-sm">
+              <input
+                type="text"
+                name="searchProducts"
+                placeholder="Søk etter Produkt"
+                className="outline-none flex-1  "
+                onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+              />
+              <SearchButton />
+            </div>
           </div>
         </form>
         <div className="flex felx-1 gap-3">

@@ -27,11 +27,11 @@ export type kategori = {
 }
 
 export type catalogue = {
-    Ring: kategori,
-    Necklace: kategori,
-    Bracelet: kategori,
-    Watch: kategori,
-    Earring: kategori,
+    ring: kategori,
+    necklace: kategori,
+    bracelet: kategori,
+    watch: kategori,
+    earring: kategori,
 }
 
 
@@ -42,7 +42,7 @@ export interface catalogueState {
 const initialState: catalogueState = {
 
     catalogue: {
-        Ring: {
+        ring: {
 
             man: {
                 silver: [{
@@ -89,7 +89,7 @@ const initialState: catalogueState = {
                 },],            
             },
         },
-        Necklace: { // necklace
+        necklace: { // necklace
             man: {
                 silver: [{
                     productId: 5,
@@ -135,7 +135,7 @@ const initialState: catalogueState = {
                 },],            
             },
         },
-        Bracelet: {
+        bracelet: {
             man: {
                 silver: [{
                     productId: 9,
@@ -181,7 +181,7 @@ const initialState: catalogueState = {
                 },],            
             },
         },
-        Watch: {
+        watch: {
     
             man: {
                 silver: [{
@@ -228,7 +228,7 @@ const initialState: catalogueState = {
                 },],            
             },
         },
-        Earring: {
+        earring: {
     
             man: {
                 silver: [{

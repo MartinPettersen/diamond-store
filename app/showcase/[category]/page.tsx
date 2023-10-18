@@ -1,13 +1,11 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 import type { RootState } from "../../globalRedux/store";
 import { useSelector, useDispatch } from "react-redux";
 import ProductDisplay from "@/components/ProductDisplay";
-import CategoriDisplay from "@/components/CategoriDisplay";
 import SearchFilters from "@/components/SearchFilters";
-import FilterDisplay from "@/components/FilterDisplay";
 import { getCategori, getFilteredProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
 
@@ -25,57 +23,42 @@ export type product = {
   inStock: number;
 };
 
-
 type Props = {
-  params: { category: string }
-}
-
+  params: { category: string };
+};
 
 const Showcase = ({ params }: Props) => {
   const valgtKategori = params.category;
 
   const filters = useSelector((state: RootState) => state.filter);
-  const dispatch = useDispatch();
 
-  const [utvalgteProdukter, setUtvalgteProdukter]= useState<Product[]>();
-    const [isLoading, setLoading] = useState(true);
+  const [utvalgteProdukter, setUtvalgteProdukter] = useState<Product[]>();
 
-    
-    useEffect(() => {
-      getCategori(valgtKategori).then(
-        (data) => {setUtvalgteProdukter(data)
-        setLoading(false)}
-      )
+  useEffect(() => {
+    getCategori(valgtKategori).then((data) => setUtvalgteProdukter(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+  }, []);
 
-    
-    useEffect(() => {
-
-      const gender: string[] = [];
-      const material: string[] = [];
-      if (filters.woman) {
-        gender.push("Female");
-      };
-      if (filters.man) {
-        gender.push("Male");
-      };
-      if (filters.silver) {
-        material.push("Silver");
-      };
-      if (filters.gold) {
-        material.push("Gold");
-      };
-      getFilteredProducts(valgtKategori, gender, material).then(
-        (data) => {setUtvalgteProdukter(data)
-        setLoading(false)}
-      )
+  useEffect(() => {
+    const gender: string[] = [];
+    const material: string[] = [];
+    if (filters.woman) {
+      gender.push("female");
+    }
+    if (filters.man) {
+      gender.push("male");
+    }
+    if (filters.silver) {
+      material.push("silver");
+    }
+    if (filters.gold) {
+      material.push("gold");
+    }
+    getFilteredProducts(valgtKategori, gender, material).then((data) =>
+      setUtvalgteProdukter(data)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [filters])
-
-  const catalogue = useSelector(
-    (state: RootState) => state.catalogue.catalogue
-  );
+  }, [filters]);
 
   return (
     <div className="flex items-center flex-col">
@@ -83,27 +66,13 @@ const Showcase = ({ params }: Props) => {
       {valgtKategori}
       <div className="flex items-center justify-center w-[80%] p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {utvalgteProdukter == null? <>Loading</> :
-          
-          utvalgteProdukter.map((product, index) => (
-
-              <ProductDisplay key={index} path={`${Object.keys(valgtKategori)[index]}/${Object.keys(valgtKategori)[index]}/silver`} product={product} />                
-
-          ))
-          
-          }
-        {/* 
-          {Object.values(catalogue).map((kategori, index) => (
-            <>
-              {Object.keys(catalogue)[index] === filters.kategori ? 
-              <FilterDisplay key={index} kategori={kategori} index={index} />
-              :
-              <></>
-            }
-            </>
-          ))}
-
-            */}
+          {utvalgteProdukter == null ? (
+            <>Loading</>
+          ) : (
+            utvalgteProdukter.map((product, index) => (
+              <ProductDisplay key={index} product={product} />
+            ))
+          )}
         </div>
       </div>
     </div>

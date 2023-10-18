@@ -5,18 +5,12 @@ import { useState, useEffect } from 'react';
 import type { RootState } from "../../globalRedux/store";
 import { useSelector, useDispatch } from "react-redux";
 import ProductDisplay from "@/components/ProductDisplay";
-import CategoriDisplay from "@/components/CategoriDisplay";
-import SearchFilters from "@/components/SearchFilters";
-import FilterDisplay from "@/components/FilterDisplay";
 import { getCategori, getFilteredProducts, getSearchedProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
-
-
 
 type Props = {
   params: { results: string }
 }
-
 
 const SearchResults = ({ params }: Props) => {
   const searchTerms: string[] = [];
@@ -24,29 +18,15 @@ const SearchResults = ({ params }: Props) => {
 
   searchTerms.push(searchTerm);
 
-  const filters = useSelector((state: RootState) => state.filter);
-  const dispatch = useDispatch();
-
-  const valgtKategori = "Silver";
-
   const [utvalgteProdukter, setUtvalgteProdukter]= useState<Product[]>();
-    const [isLoading, setLoading] = useState(true);
 
     
     useEffect(() => {
       getSearchedProducts(searchTerm).then(
-        (data) => {setUtvalgteProdukter(data)
-        setLoading(false)}
+        (data) => setUtvalgteProdukter(data)
       )
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    
-
-
-  const catalogue = useSelector(
-    (state: RootState) => state.catalogue.catalogue
-  );
 
   return (
     <div className="flex items-center flex-col">
@@ -56,7 +36,7 @@ const SearchResults = ({ params }: Props) => {
           
           utvalgteProdukter.map((product, index) => (
 
-            <ProductDisplay key={index} path={`${Object.keys(valgtKategori)[index]}/${Object.keys(valgtKategori)[index]}/silver`} product={product} />                
+            <ProductDisplay key={index} product={product} />                
 
         ))
           }

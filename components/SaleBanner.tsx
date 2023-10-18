@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
 type props = {
-    sale: boolean
-}
+  sale: boolean;
+};
 
-const SaleBanner = ({sale}: props) => {
+const SaleBanner = ({ sale }: props) => {
   return (
     <div className="h-[30px] w-[100%]">
       {sale === true ? (
