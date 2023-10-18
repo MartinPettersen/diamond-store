@@ -9,7 +9,10 @@ const Footer = () => {
 
   const handleSubscription = () => {
     const input = { text: userEmail };
-    axios.post("api/subscription", input);
+    
+    const test = axios.get("api/subscription");
+    console.log(test);
+    //    axios.post("api/subscription", input);
   };
 
   return (
