@@ -13,6 +13,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import TopHeader from "./TopHeader";
 import { useState } from "react";
+import translator from "@/utils/translate";
 
 const Header = () => {
   const router = useRouter();
@@ -21,28 +22,6 @@ const Header = () => {
     (state: RootState) => state.catalogue.catalogue
   );
   const dispatch = useDispatch();
-
-  const translator = (expr: string) => {
-    switch (expr) {
-      case "ring":
-        return "Ringer";
-        break;
-      case "necklace":
-        return "Smykker";
-        break;
-      case "bracelet":
-        return "Armbånd";
-        break;
-      case "watch":
-        return "Armbåndsur";
-        break;
-      case "earring":
-        return "Øredobber";
-        break;
-      default:
-        return "we encountered a problem";
-    }
-  };
 
   const [searchTerm, setSearchTerm] = useState("");
 

@@ -2,6 +2,7 @@ import React from "react";
 import ProductDisplay from "./ProductDisplay";
 
 import { getCategori, getProducts } from "@/sanity/sanity-utils";
+import translator from "@/utils/translate";
 
 type props = {
   kategori: string;
@@ -9,27 +10,7 @@ type props = {
 };
 
 const CategoriDisplay = async ({ kategori, index }: props) => {
-  const translator = (expr: string) => {
-    switch (expr) {
-      case "ring":
-        return "Ringer";
-        break;
-      case "necklace":
-        return "Smykker";
-        break;
-      case "bracelet":
-        return "Armbånd";
-        break;
-      case "watch":
-        return "Armbåndsur";
-        break;
-      case "earring":
-        return "Øredobber";
-        break;
-      default:
-        return "we encountered a problem";
-    }
-  };
+  
 
   const products = await getCategori(kategori);
 
