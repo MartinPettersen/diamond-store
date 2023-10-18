@@ -1,7 +1,5 @@
 "use client";
 
-import type { RootState } from "../../globalRedux/store";
-import { useSelector, useDispatch } from "react-redux";
 import BuyButton from "@/components/BuyButton";
 import Image from "next/image";
 import { Product } from "@/types/Product";

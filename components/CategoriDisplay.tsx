@@ -1,7 +1,7 @@
 import React from "react";
 import ProductDisplay from "./ProductDisplay";
 
-import { getCategori, getProducts } from "@/sanity/sanity-utils";
+import { getCategori } from "@/sanity/sanity-utils";
 import translator from "@/utils/translate";
 
 type props = {

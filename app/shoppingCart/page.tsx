@@ -2,7 +2,7 @@
 
 import MiniProductDisplay from "@/components/MiniProductDisplay";
 import type { RootState } from "../globalRedux/store";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const ShoppingCart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);

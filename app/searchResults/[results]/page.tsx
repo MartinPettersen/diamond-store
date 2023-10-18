@@ -2,10 +2,8 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 
-import type { RootState } from "../../globalRedux/store";
-import { useSelector, useDispatch } from "react-redux";
 import ProductDisplay from "@/components/ProductDisplay";
-import { getCategori, getFilteredProducts, getSearchedProducts } from "@/sanity/sanity-utils";
+import { getSearchedProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
 
 type Props = {

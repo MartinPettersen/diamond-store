@@ -9,19 +9,6 @@ import SearchFilters from "@/components/SearchFilters";
 import { getCategori, getFilteredProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
 
-export type product = {
-  productId: number;
-  productName: string;
-  image: string;
-  material: string;
-  category: string;
-  description: string;
-  gender: string;
-  pris: number;
-  sale: boolean;
-  tilbudsprosent: number;
-  inStock: number;
-};
 
 type Props = {
   params: { category: string };
