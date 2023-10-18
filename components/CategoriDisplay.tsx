@@ -1,7 +1,7 @@
 import React from "react";
 import ProductDisplay from "./ProductDisplay";
 
-import { getProducts } from "@/sanity/sanity-utils";
+import { getCategori, getProducts } from "@/sanity/sanity-utils";
 
 type props = {
   kategori: string;
@@ -11,19 +11,19 @@ type props = {
 const CategoriDisplay = async ({ kategori, index }: props) => {
   const translator = (expr: string) => {
     switch (expr) {
-      case "Ring":
+      case "ring":
         return "Ringer";
         break;
-      case "Necklace":
+      case "necklace":
         return "Smykker";
         break;
-      case "Bracelet":
+      case "bracelet":
         return "Armbånd";
         break;
-      case "Watch":
+      case "watch":
         return "Armbåndsur";
         break;
-      case "Earring":
+      case "earring":
         return "Øredobber";
         break;
       default:
@@ -31,7 +31,7 @@ const CategoriDisplay = async ({ kategori, index }: props) => {
     }
   };
 
-  const products = await getProducts();
+  const products = await getCategori(kategori);
 
   return (
     <div>
@@ -42,15 +42,10 @@ const CategoriDisplay = async ({ kategori, index }: props) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.map((product, i) => (
-            <>
-              {product.categori == kategori ? (
                 <div key={product._id}>
                   <ProductDisplay key={index} product={product} />
                 </div>
-              ) : (
-                <></>
-              )}
-            </>
+            
           ))}
         </div>
       </div>

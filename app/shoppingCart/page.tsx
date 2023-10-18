@@ -20,7 +20,9 @@ const ShoppingCart = () => {
           ))}
         </div>
         <p>Beløp: {total}</p>
-        <p>gå til betaling</p>
+        <div className="flex justify-center items-center bg-yellow-400 rounded-full p-2 pl-4 pr-4 hover:cursor-pointer text-yellow-100 hover:text-white">
+          <p className="font-extrabold">Gå til betaling</p>
+        </div>
       </div>
     </div>
   );
