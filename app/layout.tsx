@@ -4,7 +4,13 @@ import { Providers } from './globalRedux/provider';
 import type { Metadata } from 'next';
 import Header from "@/components/Header";
 import Footer from '@/components/Footer';
+import { Cinzel_Decorative } from '@next/font/google'
 
+const cinzel_Decorative = Cinzel_Decorative({
+  subsets: ["latin"], weight: "400"
+});
+
+// Cinzel Decorative
 export const metadata: Metadata = {
   title: 'Din Gullsmed',
   description: 'Portfolio side',
@@ -17,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body className={cinzel_Decorative.className}>
         <Providers>
 
         <main>

@@ -67,7 +67,7 @@ const Footer = () => {
       <div>
         <div className="flex flex-row gap-3 pb-2 ">
           {/*Open Source Twitter Icon from: https://tailwind-elements.com/docs/standard/components/social-buttons/ */}
-          <Link href="https://www.twitter.com/" passHref>
+          <Link href="https://www.twitter.com/" rel="noopener noreferrer" target="_blank" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -78,7 +78,7 @@ const Footer = () => {
             </svg>
           </Link>
           {/*Open Source Facebook Icon from: https://tailwind-elements.com/docs/standard/components/social-buttons/ */}
-          <Link href="https://www.facebook.com/" passHref>
+          <Link href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -89,7 +89,7 @@ const Footer = () => {
             </svg>
           </Link>
           {/*Open Source Instagram Icon from: https://tailwind-elements.com/docs/standard/components/social-buttons/ */}
-          <Link href="https://www.instagram.com/" passHref>
+          <Link href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
