@@ -26,7 +26,7 @@ const ProductInfo = ({ params }: Props) => {
   return (
     <div className="flex w-full h-screen items-center justify-center">
       {product == null ? (
-        <>LOADING</>
+        <div className="flex items-center justify-center h-screen w-[100%] ">LOADING</div>
       ) : (
         <div key={product._id} className="flex flex-row gap-2">
           <Image

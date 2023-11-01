@@ -18,7 +18,7 @@ const SearchFilters = () => {
       {/* lav til høy pris*/}
       {/* Høy til lav pris*/}
       {/* in between X and Y */}
-      <div className="w-full flex items-center justify-center gap-4 border-b-2  border-gray-800 bg-rose-100">
+      <div className="w-full flex items-center justify-center gap-16  ">
         <div className="" onClick={() => dispatch(goldHandler())}>
           <label htmlFor="gold" className="p-[1px]">
             Gull 

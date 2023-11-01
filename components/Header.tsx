@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex flex-col items-center border-b-2 border-gray-100 ">
+    <header className="flex flex-col items-center  ">
       <TopHeader />
       <Link href="/">
         <div className="">
@@ -74,11 +74,11 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center gap-2 border-b-2 border-t-2 border-gray-800 bg-rose-50">
+      <div className="w-full flex items-center justify-center gap-16  ">
         {Object.keys(catalogue).map((kategori: string, index) => (
           <Link key={index} href={`/showcase/${kategori}`}>
             <div
-              className="capitalize hover:cursor-pointer"
+              className="capitalize hover:cursor-pointer border-b-2 border-white hover:border-gray-900"
               key={index}
               onClick={() => dispatch(categoriHandler(kategori))}
             >
