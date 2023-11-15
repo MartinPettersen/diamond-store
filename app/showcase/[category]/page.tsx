@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 import type { RootState } from "../../globalRedux/store";
 import { useSelector, useDispatch } from "react-redux";
-import ProductDisplay from "@/components/ProductDisplay";
-import SearchFilters from "@/components/SearchFilters";
+import ProductDisplay from "@/components/shoppingDisplay/ProductDisplay";
+import SearchFilters from "@/components/shoppingDisplay/SearchFilters";
 import { getCategori, getFilteredProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
 

@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import ProductDisplay from "@/components/ProductDisplay";
+import ProductDisplay from "@/components/shoppingDisplay/ProductDisplay";
 import { getSearchedProducts } from "@/sanity/sanity-utils";
 import { Product } from "@/types/Product";
 

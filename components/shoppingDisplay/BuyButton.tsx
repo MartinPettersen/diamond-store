@@ -2,7 +2,7 @@
 import React from "react";
 
 import { useDispatch } from "react-redux";
-import { add } from "../app/globalRedux/Features/cart/cartSlice";
+import { add } from "../../app/globalRedux/Features/cart/cartSlice";
 import { Product } from "@/types/Product";
 
 type props = {

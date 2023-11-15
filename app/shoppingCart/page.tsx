@@ -1,6 +1,6 @@
 "use client";
 
-import MiniProductDisplay from "@/components/MiniProductDisplay";
+import MiniProductDisplay from "@/components/cart/MiniProductDisplay";
 import type { RootState } from "../globalRedux/store";
 import { useSelector } from "react-redux";
 

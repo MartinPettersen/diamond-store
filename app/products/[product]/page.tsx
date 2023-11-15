@@ -1,6 +1,6 @@
 "use client";
 
-import BuyButton from "@/components/BuyButton";
+import BuyButton from "@/components/shoppingDisplay/BuyButton";
 import Image from "next/image";
 import { Product } from "@/types/Product";
 import { getProduct } from "@/sanity/sanity-utils";

@@ -1,4 +1,4 @@
-import ProductField from "@/components/ProductField";
+import ProductField from "@/components/shoppingDisplay/ProductField";
 
 export default async function Home() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { RootState } from "../app/globalRedux/store";
+import type { RootState } from "../../app/globalRedux/store";
 import { useSelector, useDispatch } from "react-redux";
 import { goldHandler, silverHandler, manHandler, womanHandler } from "@/app/globalRedux/Features/filters/filterSlice";
 

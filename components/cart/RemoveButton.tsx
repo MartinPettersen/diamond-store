@@ -1,7 +1,7 @@
 "use client";
 
 import { useDispatch } from "react-redux";
-import { remove } from "../app/globalRedux/Features/cart/cartSlice";
+import { remove } from "../../app/globalRedux/Features/cart/cartSlice";
 
 import { TrashIcon } from "@heroicons/react/20/solid";
 

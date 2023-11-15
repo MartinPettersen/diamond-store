@@ -2,8 +2,8 @@ import './globals.css'
 
 import { Providers } from './globalRedux/provider';
 import type { Metadata } from 'next';
-import Header from "@/components/Header";
-import Footer from '@/components/Footer';
+import Header from "@/components/header/Header";
+import Footer from '@/components/footer/Footer';
 import { Cinzel_Decorative } from '@next/font/google'
 
 const cinzel_Decorative = Cinzel_Decorative({
